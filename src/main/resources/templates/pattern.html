@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pattern View</title>
+</head>
+<body>
+
+<p th:text="'Category:: ' + ${category} + ' :: ' + ${name}"/>
+
+<p th:text=${leftText} />
+
+<p th:text=${rightText} />
+
+<table style="width:35%">
+    <tr>
+        <th>Value Name</th>
+        <th>Left</th>
+        <th>Right</th>
+    </tr>
+    <tr>
+        <td>Shape</td>
+        <td th:text=${shapeLeft}/>
+        <td th:text=${shapeRight}/>
+    </tr>
+    <tr>
+        <td>Shape Mod</td>
+        <td th:text=${complexShapeLeft}/>
+        <td th:text=${complexShapeRight}/>
+    </tr>
+
+    <tr>
+        <td>Prop Direction</td>
+        <td th:text=${propDirectionLeft}/>
+        <td th:text=${propDirectionRight}/>
+    </tr>
+
+    <tr>
+        <td>Path Direction</td>
+        <td th:text=${pathDirectionLeft}/>
+        <td th:text=${pathDirectionRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Prop Angle Modifier</td>
+        <td th:text=${propAngleModLeft}/>
+        <td th:text=${propAngleModRight}/>
+    </tr>
+    <tr>
+        <td>Path Angle Modifier</td>
+        <td th:text=${pathAngleModLeft}/>
+        <td th:text=${pathAngleModRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Path Rotation</td>
+        <td th:text=${pathRotationLeft}/>
+        <td th:text=${pathRotationRight}/>
+    </tr>
+    <tr>
+        <td>Path Size Modifier</td>
+        <td th:text=${pathSizeModLeft}/>
+        <td th:text=${pathSizeModRight}/>
+    </tr>
+    <tr>
+        <td>Path Speed</td>
+        <td th:text=${pathSpeedLeft}/>
+        <td th:text=${pathSpeedRight}/>
+    </tr>
+    <tr>
+        <td>Prop Speed</td>
+        <td th:text=${pathSpeedLeft}/>
+        <td th:text=${pathSpeedRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Grip Point</td>
+        <td th:text=${pivotXLeft}/>
+        <td th:text=${pivotXRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Speed Control</td>
+        <td th:text=${speedControlLeft}/>
+        <td th:text=${speedControlRight}/>
+    </tr>
+    <tr>
+        <td>Speed Control Modifier</td>
+        <td th:text=${speedControlModLeft}/>
+        <td th:text=${speedControlModRight}/>
+    </tr>
+    <tr>
+        <td>Upper Speed</td>
+        <td th:text=${upperSpeedLeft}/>
+        <td th:text=${upperSpeedRight}/>
+    </tr>
+    <tr>
+        <td>Lower Speed</td>
+        <td th:text=${lowerSpeedLeft}/>
+        <td th:text=${lowerSpeedRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Direction Control</td>
+        <td th:text=${dirControlLeft}/>
+        <td th:text=${dirControlRight}/>
+    </tr>
+    <tr>
+        <td>Direction Control Modifier</td>
+        <td th:text=${dirControlModLeft}/>
+        <td th:text=${dirControlModRight}/>
+    </tr>
+
+
+    <tr>
+        <td>Use Gravity</td>
+        <td th:text=${useGravityLeft}/>
+        <td th:text=${useGravityRight}/>
+    </tr>
+    <tr>
+        <td>Use Pendulums</td>
+        <td th:text=${usePendulumLeft}/>
+        <td th:text=${usePendulumRight}/>
+    </tr>
+
+    <tr>
+        <td>Use 3D</td>
+        <td th:text=${use3DLeft}/>
+        <td th:text=${use3DRight}/>
+    </tr>
+    <tr>
+        <td>3D Shape</td>
+        <td th:text=${zShapeLeft}/>
+        <td th:text=${zShapeRight}/>
+    </tr>
+    <tr>
+        <td>3D Shape Modifier</td>
+        <td th:text=${zShapeModLeft}/>
+        <td th:text=${zShapeModRight}/>
+    </tr>
+
+</table>
+
+</body>
+</html>

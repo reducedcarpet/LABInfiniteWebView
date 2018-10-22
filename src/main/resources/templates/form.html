@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/}" th:object="${patternQuery}" method="post">
+    <table>
+
+        <tr>
+            <td>Category:</td>
+            <td><select th:field="*{category}">
+                <option th:each="cat : ${patternList}" th:value="${cat}" th:text="${cat}">Wireframe</option>
+            </select></td>
+            <td th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{patternName}" /></td>
+            <td th:if="${#fields.hasErrors('patternName')}" th:errors="*{patternName}">Name Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
