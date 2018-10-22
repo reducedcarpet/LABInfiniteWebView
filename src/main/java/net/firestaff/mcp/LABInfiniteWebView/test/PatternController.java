@@ -109,7 +109,7 @@ public class PatternController {
         model.addAttribute("zShapeModLeft", Math.toDegrees(left.mod3D));
         model.addAttribute("zShapeModRight", Math.toDegrees(right.mod3D));
 
-        return "Pattern";
+        return "pattern";
     } /**/
 
     //@RequestParam(name="name", required=false, defaultValue="World") String name, Model model
