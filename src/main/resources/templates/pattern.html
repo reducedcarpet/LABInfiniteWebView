@@ -7,15 +7,15 @@
 </head>
 <body>
 
-<p th:text="'Category:: ' + ${category} + ' :: ' + ${name}"/>
+<p th:text="${category} + ' -> ' + ${name}"/>
 
-<p th:text=${leftText} />
+<p th:text="'Left: ' + ${leftText}" />
 
-<p th:text=${rightText} />
+<p th:text="'Right: ' + ${rightText}" />
 
 <table style="width:35%">
     <tr>
-        <th>Value Name</th>
+        <th>Name</th>
         <th>Left</th>
         <th>Right</th>
     </tr>

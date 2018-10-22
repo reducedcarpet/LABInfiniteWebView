@@ -2,15 +2,19 @@ package net.firestaff.mcp.LABInfiniteWebView.test;
 
 import javax.validation.Valid;
 
+import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -38,5 +42,12 @@ public class WebController implements WebMvcConfigurer {
 
             return "redirect:/pattern?category=" + query.getCategory() + "&name=" + query.getPatternName();
         }
+
+    @GetMapping(value = "/categoryPatterns")
+    public @ResponseBody
+    List<Pattern> getAllPatterns(@RequestParam(value = "category", required = true, defaultValue="Isolation") String category) {
+        List<Pattern> list = Patterns.patternMasterMap.get(category);
+        return list;
+    }
 }
 

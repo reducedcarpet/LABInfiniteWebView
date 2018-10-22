@@ -4,6 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script src="/jquery/jquery-3.3.1.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#category').change(
+	function() {
+		$.getJSON('/categoryPatterns', {
+		    category : $(this).val(),
+			ajax : 'true'
+		}, function(data) {
+			var html = '<option value="a">Pattern Name</option>';
+			var len = data.length;
+			for ( var i = 0; i < len; i++) {
+				html += '<option value="' + data[i].name + '">'
+						+ data[i].name + '</option>';
+			}
+			html += '</option>';
+                        //now that we have our options, give them to our select
+			$('#patternName').html(html);
+		});
+	});
+});
+</script>
+
 </head>
 <body>
 
@@ -13,14 +38,17 @@
 
         <tr>
             <td>Category:</td>
-            <td><select th:field="*{category}">
+            <td><select th:field="*{category}" name="category" id="category">
                 <option th:each="cat : ${patternList}" th:value="${cat}" th:text="${cat}">Wireframe</option>
             </select></td>
             <td th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</td>
         </tr>
         <tr>
             <td>Name:</td>
-            <td><input type="text" th:field="*{patternName}" /></td>
+            <td><select name="patternName" id="patternName" >
+                <option value="a">Pattern Name<option>
+            </select> </td>
+                <!-- <td><input type="text" th:field="*{patternName}" /></td> -->
             <td th:if="${#fields.hasErrors('patternName')}" th:errors="*{patternName}">Name Error</td>
         </tr>
         <tr>
