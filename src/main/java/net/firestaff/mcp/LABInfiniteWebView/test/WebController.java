@@ -40,7 +40,8 @@ public class WebController implements WebMvcConfigurer {
                 return "form";
             }
 
-            return "redirect:/pattern?category=" + query.getCategory() + "&name=" + query.getPatternName();
+            return "redirect:/pattern?category=" + query.getCategory() + "&name="
+                    + query.getPatternName().replaceAll("\\|", "%7C");
         }
 
     @GetMapping(value = "/categoryPatterns")

@@ -22,13 +22,19 @@ public class PatternController {
         List<Pattern> patterns = Patterns.patternMasterMap.get(patternList);
         Pattern result = patterns.get(0);
 
+        System.out.println("name " + name);
+        String unsafeName = name.replaceAll("%7C", "\\|");
+        System.out.println("uname " + unsafeName);
+
         for(Pattern p : patterns) {
-            if(p.getName().equals(name)) result = p;
+            if(p.getName().equals(unsafeName)) result = p;
         }
 
         model.addAttribute("patternList", Patterns.patternList);
 
-        model.addAttribute("name", name);
+        String safeName = name.replaceAll("%7C","\u007C" );
+
+        model.addAttribute("name", safeName);
         model.addAttribute("category", patternList);
 
         model.addAttribute("leftText", result.getLeftText());
@@ -57,13 +63,13 @@ public class PatternController {
         model.addAttribute("pathDirectionLeft", pathDirectionLeft);
         model.addAttribute("pathDirectionRight", pathDirectionRight);
 
-        model.addAttribute("propAngleModLeft", left.propAngleModifier);
-        model.addAttribute("propAngleModRight", right.propAngleModifier);
-        model.addAttribute("pathAngleModLeft", left.pathAngleModifier);
-        model.addAttribute("pathAngleModRight", right.pathAngleModifier);
+        model.addAttribute("propAngleModLeft", Math.toDegrees(left.propAngleModifier));
+        model.addAttribute("propAngleModRight", Math.toDegrees(right.propAngleModifier));
+        model.addAttribute("pathAngleModLeft", Math.toDegrees(left.pathAngleModifier));
+        model.addAttribute("pathAngleModRight", Math.toDegrees(right.pathAngleModifier));
 
-        model.addAttribute("pathRotationLeft", left.pathRotation);
-        model.addAttribute("pathRotationRight", right.pathRotation);
+        model.addAttribute("pathRotationLeft", Math.toDegrees(left.pathRotation));
+        model.addAttribute("pathRotationRight", Math.toDegrees(right.pathRotation));
         model.addAttribute("pathSizeModLeft", left.pathSizeModifier);
         model.addAttribute("pathSizeModRight", right.pathSizeModifier);
         model.addAttribute("pathSpeedLeft", left.pathSpeed);
@@ -79,8 +85,8 @@ public class PatternController {
 
         model.addAttribute("speedControlLeft", left.speedControl);
         model.addAttribute("speedControlRight", right.speedControl);
-        model.addAttribute("speedControlModLeft", left.speedChangeModifier);
-        model.addAttribute("speedControlModRight", right.speedChangeModifier);
+        model.addAttribute("speedControlModLeft", Math.toDegrees(left.speedChangeModifier));
+        model.addAttribute("speedControlModRight", Math.toDegrees(right.speedChangeModifier));
         model.addAttribute("upperSpeedLeft", left.upperSpeed);
         model.addAttribute("upperSpeedRight", right.upperSpeed);
         model.addAttribute("lowerSpeedLeft", left.lowerSpeed);
@@ -88,8 +94,8 @@ public class PatternController {
 
         model.addAttribute("dirControlLeft", left.directionControl);
         model.addAttribute("dirControlRight", right.directionControl);
-        model.addAttribute("dirControlModLeft", left.directionChangeModifier);
-        model.addAttribute("dirControlModRight", right.directionChangeModifier);
+        model.addAttribute("dirControlModLeft", Math.toDegrees(left.directionChangeModifier));
+        model.addAttribute("dirControlModRight", Math.toDegrees(right.directionChangeModifier));
 
         model.addAttribute("useGravityLeft", left.useGravity);
         model.addAttribute("useGravityRight", right.useGravity);
@@ -100,8 +106,8 @@ public class PatternController {
         model.addAttribute("use3DRight", right.use3D);
         model.addAttribute("zShapeLeft", left.zShape);
         model.addAttribute("zShapeRight", right.zShape);
-        model.addAttribute("zShapeModLeft", left.mod3D);
-        model.addAttribute("zShapeModRight", right.mod3D);
+        model.addAttribute("zShapeModLeft", Math.toDegrees(left.mod3D));
+        model.addAttribute("zShapeModRight", Math.toDegrees(right.mod3D));
 
         return "Pattern";
     } /**/
