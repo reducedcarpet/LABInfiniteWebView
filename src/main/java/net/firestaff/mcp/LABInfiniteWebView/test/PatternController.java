@@ -2,12 +2,11 @@ package net.firestaff.mcp.LABInfiniteWebView.test;
 
 import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
+import net.firestaff.mcp.baselab.patterns.PatternsVTG;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -18,13 +17,17 @@ public class PatternController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/pattern")
-    public String pattern(@RequestParam(value="category", defaultValue="Isolation") String patternList, @RequestParam(value="name", defaultValue="World") String name, Model model) {
-        List<Pattern> patterns = Patterns.patternMasterMap.get(patternList);
+    public String pattern(@RequestParam(value="propType", defaultValue="Staff") String prop,
+                          @RequestParam(value="framework", defaultValue="VTG") String framework,
+                          @RequestParam(value="category", defaultValue="Isolation") String patternList,
+                          @RequestParam(value="name", defaultValue="World") String name, Model model) {
+        List<Pattern> patterns;
+        if(framework.equalsIgnoreCase("OG")) patterns = Patterns.patternMasterMap.get(patternList);
+        else patterns = PatternsVTG.patternMasterMap.get(patternList);
+
         Pattern result = patterns.get(0);
 
-        System.out.println("name " + name);
         String unsafeName = name.replaceAll("%7C", "\\|");
-        System.out.println("uname " + unsafeName);
 
         for(Pattern p : patterns) {
             if(p.getName().equals(unsafeName)) result = p;

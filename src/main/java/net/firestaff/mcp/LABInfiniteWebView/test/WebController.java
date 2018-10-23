@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
+import net.firestaff.mcp.baselab.patterns.PatternsVTG;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,8 +16,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
-import java.util.Map;
-
 
 @Controller
 public class WebController implements WebMvcConfigurer {
@@ -40,15 +39,22 @@ public class WebController implements WebMvcConfigurer {
                 return "form";
             }
 
-            return "redirect:/pattern?category=" + query.getCategory() + "&name="
-                    + query.getPatternName().replaceAll("\\|", "%7C");
+            return "redirect:/pattern?framework=" + query.getFramework()
+                    + "&propType=" + query.getPropType()
+                    + "&category=" + query.getCategory()
+                    + "&name=" + query.getPatternName().replaceAll("\\|", "%7C");
         }
 
     @GetMapping(value = "/categoryPatterns")
     public @ResponseBody
-    List<Pattern> getAllPatterns(@RequestParam(value = "category", required = true, defaultValue="Isolation") String category) {
-        List<Pattern> list = Patterns.patternMasterMap.get(category);
-        return list;
+    List<Pattern> getAllPatterns(@RequestParam(value="propType", defaultValue="Staff") String prop,
+                                 @RequestParam(value="framework", defaultValue="VTG") String framework,
+                                 @RequestParam(value="category", required=true, defaultValue="Isolation") String category) {
+        List<Pattern> patterns;
+        if(framework.equalsIgnoreCase("OG")) patterns = Patterns.patternMasterMap.get(category);
+        else patterns = PatternsVTG.patternMasterMap.get(category);
+
+        return patterns;
     }
 }
 

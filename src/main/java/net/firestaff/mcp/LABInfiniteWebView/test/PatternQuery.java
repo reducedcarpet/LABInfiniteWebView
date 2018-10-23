@@ -10,6 +10,26 @@ public class PatternQuery {
     @NotNull
     private String category;
 
+    private String framework = "VTG";
+
+    private String propType = "Staff";
+
+    public String getFramework() {
+        return framework;
+    }
+
+    public void setFramework(String framework) {
+        this.framework = framework;
+    }
+
+    public String getPropType() {
+        return propType;
+    }
+
+    public void setPropType(String propType) {
+        this.propType = propType;
+    }
+
     public String getPatternName() {
         return this.patternName;
     }

@@ -13,6 +13,7 @@ $(document).ready(function() {
 	function() {
 		$.getJSON('/categoryPatterns', {
 		    category : $(this).val(),
+		    framework : $(this).val(),
 			ajax : 'true'
 		}, function(data) {
 			var html = '<option value="a">Pattern Name</option>';
@@ -35,7 +36,21 @@ $(document).ready(function() {
 
 <form action="#" th:action="@{/}" th:object="${patternQuery}" method="post">
     <table>
-
+        <tr>
+            <td>
+                <select th:field="*{framework}" name="framework" id="framework">
+                    <option value="VTG" text="VTG">VTG</option>
+                    <option value="OG" text="OG">OG</option>
+                </select>
+            </td>
+            <td>
+                <select th:field="*{propType}" name="propType" id="propType">
+                    <option value="Staff">Staff</option>
+                    <option value="Poi">Poi</option>
+                    <option value="Hoop">Hoop</option>
+                </select>
+            </td>
+        </tr>
         <tr>
             <td>Category:</td>
             <td><select th:field="*{category}" name="category" id="category">
