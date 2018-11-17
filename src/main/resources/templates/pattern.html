@@ -7,139 +7,139 @@
 </head>
 <body>
 
-<p th:text="${category} + ' -> ' + ${patternName}"/>
+<p th:text="${category} + ' >>> ' + ${patternName}"/>
 
-<p th:utext="'r.s.pat:' + ${rightText} + '&lt;br /&gt;' + 'l.s.pat:' + ${leftText}" />
+<!-- <p th:utext="'r.s.pat:' + ${rightText} + '&lt;br /&gt;' + 'l.s.pat:' + ${leftText}" /> -->
 
 
 
-<table style="width:40%">
-    <tr>
+<table style="width:80%; border-spacing:5px; border: 1px solid black;">
+    <thead  style="text-align: center; background-color: #dfffff;">
         <th>Name</th>
         <th>Left</th>
         <th>Right</th>
-    </tr>
-    <tr>
+    </thead>
+    <tr style="border: 1px solid grey;">
         <td>Shape</td>
         <td th:text=${shapeLeft}/>
         <td th:text=${shapeRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Shape Mod</td>
         <td th:text=${complexShapeLeft}/>
         <td th:text=${complexShapeRight}/>
     </tr>
 
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Prop Direction</td>
         <td th:text=${propDirectionLeft}/>
         <td th:text=${propDirectionRight}/>
     </tr>
 
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Path Direction</td>
         <td th:text=${pathDirectionLeft}/>
         <td th:text=${pathDirectionRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Prop Angle Modifier</td>
         <td th:text=${propAngleModLeft}/>
         <td th:text=${propAngleModRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Path Angle Modifier</td>
         <td th:text=${pathAngleModLeft}/>
         <td th:text=${pathAngleModRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Path Rotation</td>
         <td th:text=${pathRotationLeft}/>
         <td th:text=${pathRotationRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Path Size Modifier</td>
         <td th:text=${pathSizeModLeft}/>
         <td th:text=${pathSizeModRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Path Speed</td>
         <td th:text=${pathSpeedLeft}/>
         <td th:text=${pathSpeedRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Prop Speed</td>
         <td th:text=${pathSpeedLeft}/>
         <td th:text=${pathSpeedRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Grip Point</td>
         <td th:text=${pivotXLeft}/>
         <td th:text=${pivotXRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Speed Control</td>
         <td th:text=${speedControlLeft}/>
         <td th:text=${speedControlRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Speed Control Modifier</td>
         <td th:text=${speedControlModLeft}/>
         <td th:text=${speedControlModRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Upper Speed</td>
         <td th:text=${upperSpeedLeft}/>
         <td th:text=${upperSpeedRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Lower Speed</td>
         <td th:text=${lowerSpeedLeft}/>
         <td th:text=${lowerSpeedRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Direction Control</td>
         <td th:text=${dirControlLeft}/>
         <td th:text=${dirControlRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Direction Control Modifier</td>
         <td th:text=${dirControlModLeft}/>
         <td th:text=${dirControlModRight}/>
     </tr>
 
 
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Use Gravity</td>
         <td th:text=${useGravityLeft}/>
         <td th:text=${useGravityRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>Use Pendulums</td>
         <td th:text=${usePendulumLeft}/>
         <td th:text=${usePendulumRight}/>
     </tr>
 
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>Use 3D</td>
         <td th:text=${use3DLeft}/>
         <td th:text=${use3DRight}/>
     </tr>
-    <tr>
+    <tr style="border: 1px solid grey;">
         <td>3D Shape</td>
         <td th:text=${zShapeLeft}/>
         <td th:text=${zShapeRight}/>
     </tr>
-    <tr>
+    <tr style="background-color: #dfffff;">
         <td>3D Shape Modifier</td>
         <td th:text=${zShapeModLeft}/>
         <td th:text=${zShapeModRight}/>
