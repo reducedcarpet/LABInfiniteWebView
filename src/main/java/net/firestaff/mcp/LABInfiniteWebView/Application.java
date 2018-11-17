@@ -1,4 +1,4 @@
-package net.firestaff.mcp.LABInfiniteWebView.test;
+package net.firestaff.mcp.LABInfiniteWebView;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,8 @@
-package net.firestaff.mcp.LABInfiniteWebView.test;
+package net.firestaff.mcp.LABInfiniteWebView.controller;
 
 import javax.validation.Valid;
 
+import net.firestaff.mcp.LABInfiniteWebView.test.PatternQuery;
 import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
 import net.firestaff.mcp.baselab.patterns.PatternsVTG;

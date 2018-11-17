@@ -1,7 +1,8 @@
-package net.firestaff.mcp.LABInfiniteWebView.test;
+package net.firestaff.mcp.LABInfiniteWebView.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import net.firestaff.mcp.LABInfiniteWebView.test.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

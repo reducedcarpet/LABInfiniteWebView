@@ -1,57 +1,109 @@
-package net.firestaff.mcp.LABInfiniteWebView.test;
+package net.firestaff.mcp.LABInfiniteWebView.model;
 
 import net.firestaff.mcp.baselab.patterns.Positions;
+//import org.hibernate.annotations.GenericGenerator;
 
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.StringTokenizer;
 
-public class PatternView {
 
+//@Entity(name = "pattern")
+public class PatternView implements Serializable {
+
+    //@Id
+    //@GeneratedValue(generator = "increment")
+    //@GenericGenerator(name = "increment", strategy = "increment")
+    //@Column(name = "id")
+    private Long id;
+
+    //@Column(columnDefinition = "smallint")
     public int pathDirection = 1;
 
+    //@Column(columnDefinition = "smallint")
     public int propDirection = 1;
 
+    //@Column(columnDefinition = "int")
     public int xAdj = 0;
 
+    //@Column(columnDefinition = "int")
     public int yAdj = 0;
 
+    //@Column(columnDefinition = "real")
     public double pathSizeModifier = 1;
 
+    //@Column(columnDefinition = "real")
     public double pathAngleIncrement = Math.PI / 125;
 
+    //@Column(columnDefinition = "real")
     public double pathAngleModifier = 0;
 
+    //@Column(columnDefinition = "real")
     public double pathSpeed = 1;
 
+    //@Column(columnDefinition = "real")
     public double pathRotation = 0;
 
+    //@Column(columnDefinition = "real")
     public double propAngleIncrement = Math.PI / 125;
 
+    //@Column(columnDefinition = "real")
     public double propAngleModifier = 0;
 
+    //@Column(columnDefinition = "real")
     public double propSpeed = 1;
 
+    //@Column(columnDefinition = "text")
     public String shape = "Circle";
 
+    //@Column(columnDefinition = "text")
     public String complexShape = "";
 
+    //@Column(columnDefinition = "real")
     public double pivotX = 0;
 
+    //@Column(columnDefinition = "real")
     public double pivotY = 0;
 
+
+    //@Column(columnDefinition = "text")
     public String speedControl = "Constant";
+
+    //@Column(columnDefinition = "real")
     public double speedChangeModifier = 0;
 
+
+    //@Column(columnDefinition = "text")
     public String directionControl = "NoChange";
+
+    //@Column(columnDefinition = "real")
     public double directionChangeModifier = 0;
 
+
+    //@Column(columnDefinition = "boolean")
     public boolean useGravity = false;
+
+    //@Column(columnDefinition = "boolean")
     public boolean usePendulums = false;
 
+
+    //@Column(columnDefinition = "boolean")
     public boolean use3D = false;
+
+    //@Column(columnDefinition = "text")
     public String zShape = "";
+
+    //@Column(columnDefinition = "real")
     public double mod3D = 0;
 
+
+    //@Column(columnDefinition = "real")
     public double upperSpeed = 1;
+
+    //@Column(columnDefinition = "real")
     public double lowerSpeed = 0;
 
     // Pattern Format NEW//////////////////////////////////////////////////////////////////////////

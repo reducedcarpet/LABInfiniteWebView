@@ -1,5 +1,6 @@
-package net.firestaff.mcp.LABInfiniteWebView.test;
+package net.firestaff.mcp.LABInfiniteWebView.controller;
 
+import net.firestaff.mcp.LABInfiniteWebView.model.PatternView;
 import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
 import net.firestaff.mcp.baselab.patterns.PatternsVTG;
@@ -20,7 +21,7 @@ public class PatternController {
     public String pattern(@RequestParam(value="propType", defaultValue="Staff") String prop,
                           @RequestParam(value="framework", defaultValue="VTG") String framework,
                           @RequestParam(value="category", defaultValue="Isolation") String patternList,
-                          @RequestParam(value="name", defaultValue="World") String name, Model model) {
+                          @RequestParam(value="name", defaultValue="") String name, Model model) {
         List<Pattern> patterns;
         if(framework.equalsIgnoreCase("OG")) patterns = Patterns.patternMasterMap.get(patternList);
         else patterns = PatternsVTG.patternMasterMap.get(patternList);
@@ -37,7 +38,7 @@ public class PatternController {
 
         String safeName = name.replaceAll("%7C","\u007C" );
 
-        model.addAttribute("name", safeName);
+        model.addAttribute("patternName", result.getName());
         model.addAttribute("category", patternList);
 
         model.addAttribute("leftText", result.getLeftText());
