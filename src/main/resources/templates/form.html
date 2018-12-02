@@ -9,10 +9,10 @@
 
 <script>
 $(document).ready(function() {
-    $('#category').change(
+    $('#patternCategory').change(
 	function() {
 		$.getJSON('/categoryPatterns', {
-		    category : $(this).val(),
+		    patternCategory : $(this).val(),
 		    framework : $(this).val(),
 			ajax : 'true'
 		}, function(data) {
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 <form action="#" th:action="@{/}" th:object="${patternQuery}" method="post">
     <table>
-        <tr>
+     <!--   <tr>
             <td>
                 <select th:field="*{framework}" name="framework" id="framework">
                     <option value="VTG" text="VTG">VTG</option>
@@ -50,13 +50,13 @@ $(document).ready(function() {
                     <option value="Hoop">Hoop</option>
                 </select>
             </td>
-        </tr>
+        </tr> -->
         <tr>
             <td>Category:</td>
-            <td><select th:field="*{category}" name="category" id="category">
+            <td><select th:field="*{patternCategory}" name="patternCategory" id="patternCategory">
                 <option th:each="cat : ${patternList}" th:value="${cat}" th:text="${cat}">Wireframe</option>
             </select></td>
-            <td th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</td>
+            <td th:if="${#fields.hasErrors('patternCategory')}" th:errors="*{patternCategory}">Category Error</td>
         </tr>
         <tr>
             <td>Name:</td>

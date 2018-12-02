@@ -42,7 +42,7 @@ public class WebController implements WebMvcConfigurer {
 
             return "redirect:/pattern?framework=" + query.getFramework()
                     + "&propType=" + query.getPropType()
-                    + "&category=" + query.getCategory()
+                    + "&category=" + query.getPatternCategory()
                     + "&name=" + query.getPatternName().replaceAll("\\|", "%7C");
         }
 
@@ -50,10 +50,10 @@ public class WebController implements WebMvcConfigurer {
     public @ResponseBody
     List<Pattern> getAllPatterns(@RequestParam(value="propType", defaultValue="Staff") String prop,
                                  @RequestParam(value="framework", defaultValue="VTG") String framework,
-                                 @RequestParam(value="category", required=true, defaultValue="Isolation") String category) {
+                                 @RequestParam(value="patternCategory", required=true, defaultValue="Isolation") String patternCategory) {
         List<Pattern> patterns;
-        if(framework.equalsIgnoreCase("OG")) patterns = Patterns.patternMasterMap.get(category);
-        else patterns = PatternsVTG.patternMasterMap.get(category);
+        if(framework.equalsIgnoreCase("OG")) patterns = Patterns.patternMasterMap.get(patternCategory);
+        else patterns = PatternsVTG.patternMasterMap.get(patternCategory);
 
         return patterns;
     }

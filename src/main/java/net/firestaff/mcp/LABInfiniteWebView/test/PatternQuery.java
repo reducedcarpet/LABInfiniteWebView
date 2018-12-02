@@ -8,7 +8,7 @@ public class PatternQuery {
     private String patternName;
 
     @NotNull
-    private String category;
+    private String patternCategory;
 
     private String framework = "VTG";
 
@@ -38,15 +38,15 @@ public class PatternQuery {
         this.patternName = name;
     }
 
-    public String getCategory() {
-        return category;
+    public String getPatternCategory() {
+        return patternCategory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPatternCategory(String patternCategory) {
+        this.patternCategory = patternCategory;
     }
 
     public String toString() {
-        return "PatternQuery(Category: " + this.category + " - Name: " + this.patternName + ")";
+        return "PatternQuery(Category: " + this.patternCategory + " - Name: " + this.patternName + ")";
     }
 }

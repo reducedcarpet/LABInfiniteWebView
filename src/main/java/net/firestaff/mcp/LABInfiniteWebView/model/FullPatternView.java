@@ -1,16 +1,25 @@
 package net.firestaff.mcp.LABInfiniteWebView.model;
 
+import javax.persistence.*;
+
+@Entity
 public class FullPatternView {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    String name;
+    String patternName;
+
+    String patternCategory;
 
     String propType;
 
-    PatternView left;
+    PatternView leftPattern;
+    //String leftText;
 
-    PatternView right;
+    PatternView rightPattern;
+    //String rightText;
 
     public String getPropType() {
         return propType;
@@ -20,29 +29,31 @@ public class FullPatternView {
         this.propType = propType;
     }
 
-    public String getName() {
-        return name;
+    public String getPatternName() {
+        return patternName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPatternName(String patternName) {
+        this.patternName = patternName;
     }
 
-    public PatternView getLeft() {
-        return left;
+    public PatternView getLeftPattern() {
+        return leftPattern;
     }
 
-    public void setLeft(PatternView left) {
-        this.left = left;
+    public void setLeftPattern(PatternView leftPattern) {
+        this.leftPattern = leftPattern;
     }
 
-    public PatternView getRight() {
-        return right;
+    public PatternView getRightText() { return rightPattern; }
+
+    public void setRightPattern(PatternView rightPattern) { this.rightPattern = rightPattern; }
+
+    public String getPatternCategory() {
+        return patternCategory;
     }
 
-    public void setRight(PatternView right) {
-        this.right = right;
+    public void setPatternCategory(String patternCategory) {
+        this.patternCategory = patternCategory;
     }
-
-
 }

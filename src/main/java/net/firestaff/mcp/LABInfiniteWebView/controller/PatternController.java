@@ -1,9 +1,12 @@
 package net.firestaff.mcp.LABInfiniteWebView.controller;
 
+import net.firestaff.mcp.LABInfiniteWebView.dao.PatternRepository;
+import net.firestaff.mcp.LABInfiniteWebView.model.FullPatternView;
 import net.firestaff.mcp.LABInfiniteWebView.model.PatternView;
 import net.firestaff.mcp.baselab.patterns.Pattern;
 import net.firestaff.mcp.baselab.patterns.Patterns;
 import net.firestaff.mcp.baselab.patterns.PatternsVTG;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +17,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class PatternController {
+
+    @Autowired
+    PatternRepository patternRepo;
 
     private final AtomicLong counter = new AtomicLong();
 
@@ -37,9 +43,13 @@ public class PatternController {
         model.addAttribute("patternList", Patterns.patternList);
 
         String safeName = name.replaceAll("%7C","\u007C" );
+        //System.out.println("SAFENAME: " + safeName);
+        FullPatternView full = patternRepo.findByPatternName(unsafeName).get(0);
+        //FullPatternView full = patternRepo.findByPatternName(unsafeName, true).get(0);
 
-        model.addAttribute("patternName", result.getName());
-        model.addAttribute("category", patternList);
+
+        model.addAttribute("patternName", full.getPatternName());
+        model.addAttribute("patternCategory", full.getPatternCategory());
 
         model.addAttribute("leftText", result.getLeftText());
         model.addAttribute("rightText", result.getRightText());

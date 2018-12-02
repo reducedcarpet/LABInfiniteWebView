@@ -3,21 +3,19 @@ package net.firestaff.mcp.LABInfiniteWebView.model;
 import net.firestaff.mcp.baselab.patterns.Positions;
 //import org.hibernate.annotations.GenericGenerator;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.StringTokenizer;
 
 
-//@Entity(name = "pattern")
+@Entity
 public class PatternView implements Serializable {
 
-    //@Id
+    @Id
     //@GeneratedValue(generator = "increment")
-    //@GenericGenerator(name = "increment", strategy = "increment")
-    //@Column(name = "id")
+    //@GenericGenerator(patternName = "increment", strategy = "increment")
+    //@Column(patternName = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //@Column(columnDefinition = "smallint")
@@ -36,7 +34,7 @@ public class PatternView implements Serializable {
     public double pathSizeModifier = 1;
 
     //@Column(columnDefinition = "real")
-    public double pathAngleIncrement = Math.PI / 125;
+    //public double pathAngleIncrement = Math.PI / 125;
 
     //@Column(columnDefinition = "real")
     public double pathAngleModifier = 0;
@@ -48,7 +46,7 @@ public class PatternView implements Serializable {
     public double pathRotation = 0;
 
     //@Column(columnDefinition = "real")
-    public double propAngleIncrement = Math.PI / 125;
+    //public double propAngleIncrement = Math.PI / 125;
 
     //@Column(columnDefinition = "real")
     public double propAngleModifier = 0;
@@ -127,6 +125,12 @@ public class PatternView implements Serializable {
     // 18 ZShape String
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    public PatternView() {}
+
+    public PatternView(String text) {
+        this.parsePropText(text);
+    }
 
     public void parsePropText(String phrase) {
         this.pivotX = 0;
@@ -226,22 +230,22 @@ public class PatternView implements Serializable {
         else if(newX >= 140 && newX <= 150 && newY >= 240 && newY <= 250) {
             this.xAdj = Positions.POINT_UP_LEFT_HALF.x;
             this.yAdj = Positions.POINT_UP_LEFT_HALF.y;
-            //System.out.println("up left half");
+            //System.out.println("up leftText half");
         }
         else if(newX >= 340 && newX <= 350 && newY >= 240 && newY <= 250) {
             this.xAdj = Positions.POINT_UP_RIGHT_HALF.x;
             this.yAdj = Positions.POINT_UP_RIGHT_HALF.y;
-            //System.out.println("up right half");
+            //System.out.println("up rightText half");
         }
         else if(newX >= 140 && newX <= 150 && newY >= 340 && newY <= 350) {
             this.xAdj = Positions.POINT_CENTER_LEFT_HALF.x;
             this.yAdj = Positions.POINT_CENTER_LEFT_HALF.y;
-            //System.out.println("center left half");
+            //System.out.println("center leftText half");
         }
         else if(newX >= 340 && newX <= 350 && newY >= 340 && newY <= 350) {
             this.xAdj = Positions.POINT_CENTER_RIGHT_HALF.x;
             this.yAdj = Positions.POINT_CENTER_RIGHT_HALF.y;
-            //System.out.println("center right half");
+            //System.out.println("center rightText half");
         }
         else {
             this.xAdj = Positions.POINT_CENTER.x;
