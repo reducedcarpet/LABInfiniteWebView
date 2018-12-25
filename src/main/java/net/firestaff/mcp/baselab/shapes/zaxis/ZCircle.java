@@ -7,6 +7,7 @@ public class ZCircle extends AbstractZShape{
     }
 
     public double draw(double circleAngle, double zMod) {
+        circleAngle = circleAngle + zMod;
         double x =  Math.cos(circleAngle);
 
         return x;

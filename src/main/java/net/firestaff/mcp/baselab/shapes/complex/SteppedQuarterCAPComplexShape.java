@@ -84,7 +84,7 @@ public class SteppedQuarterCAPComplexShape extends AbstractComplexShape implemen
 
         }
 
-        p.x = (int)x;
+        p.x = x;
         p.y = (int)y;
 
         return p;

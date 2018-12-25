@@ -3,6 +3,7 @@ package net.firestaff.mcp.baselab.shapes.util;
 import net.firestaff.mcp.baselab.shapes.*;
 import net.firestaff.mcp.baselab.shapes.complex.*;
 import net.firestaff.mcp.baselab.shapes.gridtracing.*;
+import net.firestaff.mcp.baselab.shapes.parabola.Parabolic;
 import net.firestaff.mcp.baselab.shapes.paused.PausedFullComplexShape;
 import net.firestaff.mcp.baselab.shapes.paused.PausedHalfCapComplexShape;
 import net.firestaff.mcp.baselab.shapes.paused.PausedHalfComplexShape;
@@ -28,7 +29,7 @@ public interface ShapeConstants {
     Shape POINT = new Dot();
 
     Shape CIRCLE = new Circle();
-    Shape OVAL = new Oval();
+    Shape OVAL = new Parabolic(); //new Oval();
     Shape SQUARE = new Square();
 
     Shape LINE = new Line();

@@ -25,10 +25,10 @@ public class PatternView implements Serializable {
     public int propDirection = 1;
 
     //@Column(columnDefinition = "int")
-    public int xAdj = 0;
+    public double xAdj = 0;
 
     //@Column(columnDefinition = "int")
-    public int yAdj = 0;
+    public double yAdj = 0;
 
     //@Column(columnDefinition = "real")
     public double pathSizeModifier = 1;

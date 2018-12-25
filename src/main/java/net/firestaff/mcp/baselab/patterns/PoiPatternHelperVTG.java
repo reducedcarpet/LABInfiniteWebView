@@ -3,9 +3,51 @@ package net.firestaff.mcp.baselab.patterns;
 class PoiPatternHelperVTG {
 
     static {
+        // Thread the needle
+        String lefty = "0,0.025,0.0,0,0.025,1.5707963267948966,0.2,-1.0,-1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
+        String righty = "0,0.025,0.0,0,0.025,1.5707963267948966,0.2,1.0,1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
+        Pattern ptt = new Pattern(lefty, righty, "Thread the Needle");
+        PoiPatternsVTG.basicTutorialPatterns.add(ptt);
+        // 3Bt Weave
+        lefty =  "0,0.025,3.141592653589793,0,0.025,0.0,0.0,1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,145.0,0,345.0";
+        righty = "0,0.025,0.0,0,0.025,3.141592653589793,0.0,1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,145.0,0,345.0";
+        Pattern ptt3 = new Pattern(lefty, righty, "3Bt Weave");
+        PoiPatternsVTG.basicTutorialPatterns.add(ptt3);
+        // The Fountain
+        lefty =  "0,0.025,0.0,0,0.025,0.0,1.5,1.0,1.0,1.0,9.0,205.0,Circle,6.0,0,250.0,0,345.0";
+        righty = "0,0.025,3.141592653589793,0,0.025,0.0,1.5,1.0,1.0,1.0,9.0,205.0,Circle,6.0,0,250.0,0,345.0";
+        Pattern ptt2 = new Pattern(lefty, righty, "The Fountain");
+        PoiPatternsVTG.basicTutorialPatterns.add(ptt2);
+        // Windmill
+        lefty =  "0,0.025,0.0,0,0.025,3.141592653589793,0.0,1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,250.0,0,245.0";
+        righty = "0,0.025,3.141592653589793,0,0.025,0.0,0.0,1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,250.0,0,245.0";
+        Pattern pttt3 = new Pattern(lefty, righty, "Windmill");
+        PoiPatternsVTG.basicTutorialPatterns.add(pttt3);
+        // CAP
+        lefty = "0,0.025,0.0,0,0.025,3.141592653589793,1.0,-1.0,-1.0,1.0,9.0,205.0,HalfVerticalRightComplexShape,3.0,0,250.0,0,345.0";
+        righty = "0,0.025,0.0,0,0.025,0.0,1.0,1.0,1.0,1.0,9.0,205.0,HalfVerticalRightComplexShape,3.0,0,250.0,0,345.0";
+        Pattern ptt5 = new Pattern(lefty, righty, "CAP");
+        PoiPatternsVTG.basicTutorialPatterns.add(ptt5);
+        // 4 Petal Anti-Spin Flower
+        lefty =  "0,0.025,0.0,0,0.025,3.141592653589793,1.0,-1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,250.0,0,345.0";
+        righty = "0,0.025,3.141592653589793,0,0.025,0.0,1.0,-1.0,1.0,1.0,9.0,205.0,Circle,3.0,0,250.0,0,345.0";
+        Pattern pttt7 = new Pattern(lefty, righty, "4 Petal Anti-Spin Flower");
+        PoiPatternsVTG.basicTutorialPatterns.add(pttt7);
+        // 4 Petal Inspin Flower
+        lefty =  "0,0.025,0.0,0,0.025,3.141592653589793,1.0,1.0,1.0,1.0,9.0,205.0,Circle,5.0,0,250.0,0,345.0";
+        righty = "0,0.025,3.141592653589793,0,0.025,0.0,1.0,1.0,1.0,1.0,9.0,205.0,Circle,5.0,0,250.0,0,345.0";
+        Pattern pttt71 = new Pattern(lefty, righty, "4 Petal In-Spin Flower");
+        PoiPatternsVTG.basicTutorialPatterns.add(pttt71);
+        // Hoop Isolations
+        lefty =  "0,0.025,0.0,0,0.025,0.0,0.5,-1.0,-1.0,1.0,9.0,205.0,Circle,1.0,0,345.0,0,345.0";
+        righty = "0,0.025,0.0,0,0.025,0.0,0.5,1.0,1.0,1.0,9.0,205.0,Circle,1.0,0,145.0,0,345.0";
+        Pattern ptt10 = new Pattern(lefty, righty, "Poi Isolations");
+        PoiPatternsVTG.basicTutorialPatterns.add(ptt10);
 
-        String lefty = "0,0.025,0.0,0,0.025,0.0,1.0,-1.0,-1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
-        String righty = "0,0.025,0.0,0,0.025,0.0,1.0,1.0,1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
+
+
+        lefty = "0,0.025,0.0,0,0.025,0.0,1.0,-1.0,-1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
+        righty = "0,0.025,0.0,0,0.025,0.0,1.0,1.0,1.0,1.0,9.0,205.0,Circle,1.0,0,250.0,0,345.0";
         Pattern p = new Pattern(lefty, righty, "Split-Opp Isolation");
         PoiPatternsVTG.basicPatterns.add(p);
         PoiPatternsVTG.basic12Patterns.add(p);

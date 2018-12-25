@@ -7,8 +7,9 @@ public class HalfCC extends AbstractSpeed implements Speed {
     }
 
     public double updateAngle(double angle,  double propAngle, double increment, double speed, int direction, double mod) {
-        if(lowerSpeed == 0)  return SpeedHelper.updateSymmetricOnOffAngle(angle, propAngle, increment, speed, direction, (Math.PI), mod);
-        return SpeedHelper.updateSymmetricPolySpeedAngle(upperSpeed, lowerSpeed, angle, propAngle, increment, speed, direction, (Math.PI), mod);
+        //if(lowerSpeed == 0)
+            return SpeedHelper.updateSymmetricOnOffAngle(angle, propAngle, increment, speed, direction, (Math.PI), mod);
+        //else return SpeedHelper.updateSymmetricPolySpeedAngle(upperSpeed, lowerSpeed, angle, propAngle, increment, speed, direction, (Math.PI), mod);
     }
 
     public Speed copy() {

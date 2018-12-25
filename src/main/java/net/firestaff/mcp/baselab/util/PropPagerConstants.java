@@ -38,6 +38,11 @@ public interface PropPagerConstants {
     String RIGHT_SPEED_CONTROL_MODIFIER = "net.firestaff.mcp.doublestafflab.RIGHT_SPEED_CONTROL_MODIFIER";
     String LEFT_SPEED_CONTROL_MODIFIER = "net.firestaff.mcp.doublestafflab.LEFT_SPEED_CONTROL_MODIFIER";
 
+    String RIGHT_SPEED_UPPER = "net.firestaff.mcp.doublestafflab.RIGHT_SPEED_UPPER";
+    String RIGHT_SPEED_LOWER = "net.firestaff.mcp.doublestafflab.RIGHT_SPEED_LOWER";
+    String LEFT_SPEED_UPPER = "net.firestaff.mcp.doublestafflab.LEFT_SPEED_UPPER";
+    String LEFT_SPEED_LOWER = "net.firestaff.mcp.doublestafflab.LEFT_SPEED_LOWER";
+
     String RIGHT_DIRECTION_CONTROL = "net.firestaff.mcp.doublestafflab.RIGHT_DIRECTION_CONTROL";
     String LEFT_DIRECTION_CONTROL = "net.firestaff.mcp.doublestafflab.LEFT_DIRECTION_CONTROL";
     String RIGHT_DIRECTION_CONTROL_MODIFIER = "net.firestaff.mcp.doublestafflab.RIGHT_DIRECTION_CONTROL_MODIFIER";
@@ -50,6 +55,11 @@ public interface PropPagerConstants {
     String RIGHT_MOD_3D = "net.firestaff.mcp.doublestafflab.RIGHT_MOD_3D";
     String LEFT_MOD_3D = "net.firestaff.mcp.doublestafflab.LEFT_MOD_3D";
 
+    String LEFT_FLIP_3D = "net.firestaff.mcp.doublestafflab.LEFT_FLIP_3D";
+    String LEFT_TWIST_3D = "net.firestaff.mcp.doublestafflab.LEFT_TWIST_3D";
+    String RIGHT_FLIP_3D = "net.firestaff.mcp.doublestafflab.RIGHT_FLIP_3D";
+    String RIGHT_TWIST_3D = "net.firestaff.mcp.doublestafflab.RIGHT_TWIST_3D";
+
     String RIGHT_USE_GRAVITY = "net.firestaff.mcp.doublestafflab.RIGHT_USE_GRAVITY";
     String LEFT_USE_GRAVITY = "net.firestaff.mcp.doublestafflab.LEFT_USE_GRAVITY";
     String RIGHT_USE_PENDULUMS = "net.firestaff.mcp.doublestafflab.RIGHT_USE_PENDULUMS";
@@ -60,6 +70,7 @@ public interface PropPagerConstants {
 
     String R2_PROP_DIRECTION = "net.firestaff.mcp.doublestafflab.R2_PROP_DIRECTION";
     String R2_PROP_SPEED = "net.firestaff.mcp.doublestafflab.R2_PROP_SPEED";
+    String R2_PIVOT_X = "net.firestaff.mcp.doublestafflab.R2_PIVOT_X";
     String R2_PROP_ANGLE_MODIFIER = "net.firestaff.mcp.doublestafflab.R2_PROP_ANGLE_MODIFIER";
     String R2_SPEED_CONTROL = "net.firestaff.mcp.doublestafflab.R2_SPEED_CONTROL";
     String R2_SPEED_CONTROL_MODIFIER = "net.firestaff.mcp.doublestafflab.R2_SPEED_CONTROL_MODIFIER";
@@ -68,6 +79,7 @@ public interface PropPagerConstants {
 
     String L2_PROP_DIRECTION = "net.firestaff.mcp.doublestafflab.L2_PROP_DIRECTION";
     String L2_PROP_SPEED = "net.firestaff.mcp.doublestafflab.L2_PROP_SPEED";
+    String L2_PIVOT_X = "net.firestaff.mcp.doublestafflab.L2_PIVOT_X";
     String L2_PROP_ANGLE_MODIFIER = "net.firestaff.mcp.doublestafflab.L2_PROP_ANGLE_MODIFIER";
     String L2_SPEED_CONTROL = "net.firestaff.mcp.doublestafflab.L2_SPEED_CONTROL";
     String L2_SPEED_CONTROL_MODIFIER = "net.firestaff.mcp.doublestafflab.L2_SPEED_CONTROL_MODIFIER";

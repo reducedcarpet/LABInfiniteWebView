@@ -44,8 +44,8 @@ public class TranslatedHalfBrokenComplexShape extends AbstractComplexShape imple
             x = b.x;
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
         p = Rotate.rotate(p, Math.PI/2);
 
         return p;

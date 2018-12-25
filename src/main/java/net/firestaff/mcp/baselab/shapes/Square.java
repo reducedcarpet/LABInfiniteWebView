@@ -33,8 +33,8 @@ public class Square extends AbstractShape implements Shape {
 
 
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

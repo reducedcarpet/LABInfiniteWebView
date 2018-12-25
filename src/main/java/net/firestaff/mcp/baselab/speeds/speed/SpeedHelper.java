@@ -22,12 +22,32 @@ public class SpeedHelper {
 
         if (circleAngle >= period && circleAngle < (period * 2)) {
 
+            /*
+            if(Math.abs(angle % (period * 8.0)) >= (period * 4.0))
+                still = (( still) - (period * 3)) * -1;
+            else still = (( still) - period) * -1;
+
+            if(propAngle < 0) {
+                if(Math.abs(angle % (period * 8.0)) >= (period * 4.0))
+                    still = (( still) - (period * 3)) * 1;
+                else still = (( still)  - period) * 1;
+            } /**/
+
             return still;
         }
         else if (circleAngle >= (period * 2) && circleAngle < (period * 3)) {
             return upper;
         }
         else if (circleAngle >= (period * 3) && circleAngle < (period * 4)) {
+            /*
+            if(Math.abs(angle % (period * 8.0)) >= (period * 4.0)) still = (((propAngle) + still)) * -1;
+            else still = (((propAngle - (period * 2)) + still)) * -1;
+
+            if(propAngle < 0) {
+                if(Math.abs(angle % (period * 8.0)) >= (period * 4.0))
+                    still = (((propAngle) + still)); //((propAngle  + still)) * -1;
+                else still = (((propAngle - (period * 2)) + still)); //((propAngle + still)) * -1;
+            } /**/
 
             return still;
         }
@@ -83,7 +103,7 @@ public class SpeedHelper {
                     still = (((propAngle) + still)); //((propAngle  + still)) * -1;
                 else still = (((propAngle - (period * 2)) + still)); //((propAngle + still)) * -1;
             }
-            System.out.println("STILL >3 " + angle);
+            //System.out.println("STILL >3 " + angle);
 
             return still;
         }
@@ -141,7 +161,7 @@ public class SpeedHelper {
                 togo = s.copy();
                 togo.setLowerSpeed(lowerSpeed);
                 togo.setUpperSpeed(upperSpeed);
-                break;
+                return togo;
             }
         }
         return togo;

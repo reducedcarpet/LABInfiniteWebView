@@ -20,6 +20,10 @@ public class PatternProxy {
                 return PatternsVTG.basic12Patterns;
             } else return Patterns.basic12Patterns;
         }
+        else if(type == TYPE_HOOP) {
+
+            return HoopPatternsVTG.basic12Patterns;
+        }
         else {
             if (VTG) {
                 return PoiPatternsVTG.basic12Patterns;
@@ -32,6 +36,9 @@ public class PatternProxy {
             if (VTG) {
                 return PatternsVTG.patternList;
             } else return Patterns.patternList;
+        }
+        else if(type == TYPE_HOOP) {
+            return HoopPatternsVTG.patternList;
         }
         else {
             if (VTG) {
@@ -46,6 +53,9 @@ public class PatternProxy {
                 return PatternsVTG.patternFreeList;
             } else return Patterns.patternFreeList;
         }
+        else if(type == TYPE_HOOP) {
+            return HoopPatternsVTG.patternFreeList;
+        }
         else {
             if (VTG) {
                 return PoiPatternsVTG.patternFreeList;
@@ -59,6 +69,9 @@ public class PatternProxy {
                 return PatternsVTG.patternMasterMap;
             } else return Patterns.patternMasterMap;
         }
+        else if(type == TYPE_HOOP) {
+            return HoopPatternsVTG.patternMasterMap;
+        }
         else {
             if (VTG) {
                 return PoiPatternsVTG.patternMasterMap;
@@ -71,6 +84,9 @@ public class PatternProxy {
             if (VTG) {
                 return PatternsVTG.patternMasterMap.get(pattern);
             } else return Patterns.patternMasterMap.get(pattern);
+        }
+        else if(type == TYPE_HOOP) {
+            return HoopPatternsVTG.patternMasterMap.get(pattern);
         }
         else {
             if (VTG) {

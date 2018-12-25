@@ -134,8 +134,8 @@ public class DoubleSteppedQuarterCAPComplexShape extends AbstractComplexShape im
             y = p.y;
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

@@ -33,8 +33,8 @@ public class EpicycloidCycloid extends AbstractShape implements Shape {
         // swapping both makes for turned hypocycloid.
         p = Rotate.rotate(p, Math.PI / 2);
 
-        p.y = (int)y;
-        p.x = (int)x;
+        p.y = y;
+        p.x = x;
 
         return p;
     }

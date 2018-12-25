@@ -23,8 +23,8 @@ public class HypocycloidTriangle  extends AbstractShape implements Shape {
         // swapping initial sin and cos around makes an epicycloid.
         // swapping both makes for turned hypocycloid.
 
-        p.y = (int)y;
-        p.x = (int)x;
+        p.y = y;
+        p.x = x;
 
         return p;
     }

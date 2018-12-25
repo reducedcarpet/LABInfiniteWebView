@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index User Patterns</title>
+</head>
+<body>
+
+<div th:switch="${userPatterns}">
+    <h2 th:case="null">No user patterns yet!</h2>
+    <div th:case="*">
+        <h2>User Patterns</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Pattern</th>
+                <th>Prop Types</th>
+                <th>Created</th>
+                <th>Tracked</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userPatternsModel : ${userPatterns}">
+                <td th:text="${userPatternsModel.id}"></td>
+                <td th:text="${userPatternsModel.pattern}"></td>
+                <td th:text="${userPatternsModel.propTypes}"></td>
+                <td th:text="${userPatternsModel.created}"></td>
+                <td th:text="${userPatternsModel.tracked}"></td>
+                <td><a th:href="@{/edituserpattern/{id}(id=${userPatternsModel.id})}">Edit</a></td>
+                <td><a th:href="@{/deleteuserpattern/{id}(id=${userPatternsModel.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/userpattern">Add a new user pattern</a></p>
+</div>
+
+</body>
+</html>

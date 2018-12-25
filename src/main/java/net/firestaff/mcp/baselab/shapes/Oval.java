@@ -14,8 +14,8 @@ public class Oval extends AbstractShape {
         y = ((length/2) * circleModifier) * Math.sin((circleAngle));
         x = ((length/2) * circleModifier) * Math.cos((circleAngle)) / 2;
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

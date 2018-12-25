@@ -27,8 +27,8 @@ public class FullComplexShape  extends AbstractComplexShape implements ComplexSh
             x = p.x;
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

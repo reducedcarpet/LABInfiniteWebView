@@ -7,7 +7,7 @@ public class PatternGenerator {
     private static String turnProp(String left, double value) {
         String l = left.substring(8, left.lastIndexOf(",0,0.025"));
         String turn = "" + (Double.parseDouble(l) + value);
-        left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+        left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
         return left;
     }
 
@@ -59,7 +59,7 @@ public class PatternGenerator {
             String name = "R-Type: " + p.getName();
             if(name.contains("Isolation")) {
                 int index = name.indexOf("Isolation");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
             }
             output.add(new Pattern(left, right, name));
         }
@@ -74,13 +74,13 @@ public class PatternGenerator {
             String name = "R-Type: " + p.getName();
             if(name.contains("Isolation")) {
                 int index = name.indexOf("Isolation");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
                 String l = left.substring(8, left.lastIndexOf(",0,0.025"));
                 String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-                left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+                left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
                 String r = right.substring(8, right.lastIndexOf(",0,0.025"));
                 String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-                right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+                right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
                 name = name + " Perpendicular";
             }
             output.add(new Pattern(left, right, name));
@@ -96,10 +96,10 @@ public class PatternGenerator {
             String name = "R-Type: " + p.getName();
             if(name.contains("Isolation")) {
                 int index = name.indexOf("Isolation");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
                 String r = right.substring(8, right.lastIndexOf(",0,0.025"));
                 String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-                right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+                right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
                 name = name + " 1 Perpendicular";
             }
             output.add(new Pattern(left, right, name));
@@ -147,11 +147,11 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
 
             String name = "Dir-Change Vertical " + p.getName();
@@ -171,7 +171,7 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
 
             String name = "Dir-Change Vertical " + p.getName();
@@ -190,11 +190,11 @@ public class PatternGenerator {
             if(!name.contains("Anti-Spin")) {
                 if(name.contains("Isolation")) {
                     int index = name.indexOf("Isolation");
-                    name = name.substring(0,index) + name.substring(index + 9, name.length());
+                    name = name.substring(0,index) + name.substring(index + 9);
                     // Turn Prop
                     String l = left.substring(8, left.lastIndexOf(",0,0.025"));
                     String turn = "" + (Double.parseDouble(l) + Math.PI);
-                    left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+                    left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
                 }
                 output.add(new Pattern(left, right, name));
@@ -236,11 +236,11 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
 
             String name = "Three-Quarter " + p.getName();
@@ -258,7 +258,7 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             //String r = right.substring(8,right.lastIndexOf(",0,0.025"));
             //String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
@@ -282,7 +282,7 @@ public class PatternGenerator {
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
 
             String name = "Three-Quarter Hybrid " + p.getName();
@@ -302,11 +302,11 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
 
             String name = "Translated-Circle " + p.getName();
@@ -399,11 +399,11 @@ public class PatternGenerator {
             // 0,0.025,
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
             String name = "Perpendicular " + p.getName();
 
@@ -448,11 +448,11 @@ public class PatternGenerator {
             // 0,0.025,
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/4));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + (Math.PI/4));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
             String l2 = left.substring(left.indexOf(",0,0.025,") + 9, left.indexOf(",1.0"));
             String turn2 = "" + (Double.parseDouble(l2) + (Math.PI/4));
@@ -480,11 +480,11 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
             output.add(new Pattern(left, right, name));
         }
     }
@@ -499,11 +499,11 @@ public class PatternGenerator {
             name = name.replace("Isolation", "In-Spin");
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
             output.add(new Pattern(left, right, name));
         }
@@ -542,7 +542,7 @@ public class PatternGenerator {
             // Turn Staff
             String l = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:90 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -559,7 +559,7 @@ public class PatternGenerator {
             // Turn Staff
             l = right.substring(8, right.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:180 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -576,7 +576,7 @@ public class PatternGenerator {
             // Turn Staff
             l = right.substring(8, right.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:270 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -593,7 +593,7 @@ public class PatternGenerator {
             // Turn Staff
             l = right.substring(8, right.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:360 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -610,7 +610,7 @@ public class PatternGenerator {
             // Turn Staff
             l = right.substring(8, right.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:450 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -627,7 +627,7 @@ public class PatternGenerator {
             // Turn Staff
             l = right.substring(8, right.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(l, turn);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(l, turn);
 
             name = "HCB:540 " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -649,25 +649,25 @@ public class PatternGenerator {
             String name = "Centered CC: " + p.getName();
             if(name.contains("Isolation")) {
                 int index = name.indexOf("Isolation");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
             }
             if(name.contains("Anti-Spin")) {
                 int index = name.indexOf("Anti-Spin");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
                 String l = left.substring(8, left.lastIndexOf(",0,0.025"));
                 String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
-                left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+                left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
                 String r = right.substring(8, right.lastIndexOf(",0,0.025"));
                 String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-                right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+                right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
                 name = name + " Perpendicular";
             }
             if(name.contains("Hybrid")) {
                 int index = name.indexOf("Hybrid");
-                name = name.substring(0,index) + name.substring(index + 6, name.length());
+                name = name.substring(0,index) + name.substring(index + 6);
                 String r = right.substring(8, right.lastIndexOf(",0,0.025"));
                 String turnr = "" + (Double.parseDouble(r) + 1.5707963267948966);
-                right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+                right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
                 name = name + " 1 Perpendicular";
             }
             output.add(new Pattern(left, right, name));
@@ -690,12 +690,12 @@ public class PatternGenerator {
             String name = "Chuu Chuu Snake: " + p.getName();
             if(name.contains("Isolation")) {
                 int index = name.indexOf("Isolation");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
 
             }
             if(name.contains("Anti-Spin")) {
                 int index = name.indexOf("Anti-Spin");
-                name = name.substring(0,index) + name.substring(index + 9, name.length());
+                name = name.substring(0,index) + name.substring(index + 9);
                 /*
                 String l = left.substring(8, left.indexOf(",0,0.025"));
                 String turn = "" + (Double.parseDouble(l) + 1.5707963267948966);
@@ -709,11 +709,11 @@ public class PatternGenerator {
             }
             if(name.contains("Hybrid")) {
                 int index = name.indexOf("Hybrid");
-                name = name.substring(0,index) + name.substring(index + 6, name.length());
+                name = name.substring(0,index) + name.substring(index + 6);
 
                 String r = right.substring(right.indexOf("0,0.025") + 8, right.indexOf(",0,0.025"));
                 String turnr = "" + (Double.parseDouble(r) + Math.PI);
-                right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+                right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
                 //right = right + ",0,0,FullCC";
                 name = name + " 1 Perpendicular"; // goes other way round circle???? WTF
             }
@@ -761,7 +761,7 @@ public class PatternGenerator {
             // Turn Staff
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             String name = "1/4: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -777,7 +777,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "1/2: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -793,7 +793,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "3/4: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -809,7 +809,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "4/4: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -870,7 +870,7 @@ public class PatternGenerator {
             // Turn Staff
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -887,7 +887,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -904,7 +904,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -921,7 +921,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -938,7 +938,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -955,7 +955,7 @@ public class PatternGenerator {
             // Turn Staff
             l = left.substring(8, left.lastIndexOf(",0,0.025"));
             turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
 
             name = "8StepCap: " + p.getName();
             name = name.replace("Isolation", "In-Spin");
@@ -982,6 +982,162 @@ public class PatternGenerator {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 3D
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    static void generateFlip3DFullTrammelPatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Flip 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            left = left.replace("Circle", "Line");
+            right = right.replace("Circle", "Line");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,true,false"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,true,false";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateFlip3DHalfTrammelPatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Flip 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            left = left.replace("Circle", "Line");
+            right = right.replace("Circle", "Line");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,true,false"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,true,false";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateTwist3DFullTrammelPatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Twist 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            left = left.replace("Circle", "Line");
+            right = right.replace("Circle", "Line");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,false,true"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,false,true";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateTwist3DHalfTrammelPatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Twist 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            left = left.replace("Circle", "Line");
+            right = right.replace("Circle", "Line");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,false,true"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,false,true";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateFlip3DFullCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Flip 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,true,false"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,true,false";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateFlip3DHalfCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Flip 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,true,false"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,true,false";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateFlip3DQuarterCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Flip 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZQuarters,true,false"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZQuarters,true,false";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateTwist3DFullCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Twist 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,false,true"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZCircle,false,true";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateTwist3DHalfCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Twist 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,false,true"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZHalfCircle,false,true";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    static void generateTwist3DQuarterCirclePatterns(List<Pattern> input, List<Pattern> output){
+        for (Pattern p : input) {
+            String left = p.getLeftText();
+            String right = p.getRightText();
+            String name = "Twist 3D - " + p.getName();
+            name = name.replace("Isolation", "In-Spin");
+
+            right = right + ",0,0,ConstantSpeed,0,NoChange,0,true,ZQuarters,false,true"; // pushes shape
+            left = left + ",0,0,ConstantSpeed,0,NoChange,0,true,ZQuarters,false,true";
+
+            output.add(new Pattern(left, right, name));
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     // Peanuts
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1000,14 +1156,14 @@ public class PatternGenerator {
 
             String l = left.substring(8, left.lastIndexOf(",0,0.025"));
             String turn = "" + (Double.parseDouble(l) + (Math.PI/2));
-            left = "0,0.025," + (left.substring(8, left.length())).replaceFirst(l, turn);
+            left = "0,0.025," + (left.substring(8)).replaceFirst(l, turn);
             if(p.getName().contains("Mirror") || p.getName().contains("Opp") ||
                     p.getName().contains("Prop:Mir")) left = turnProp(left, (Math.PI/2));
             if(p.getName().contains("Prop:Tog")) left = turnProp(left, (Math.PI/2));
 
             String r = right.substring(8, right.lastIndexOf(",0,0.025"));
             String turnr = "" + (Double.parseDouble(r) + (Math.PI/2));
-            right = "0,0.025," + (right.substring(8, right.length())).replaceFirst(r, turnr);
+            right = "0,0.025," + (right.substring(8)).replaceFirst(r, turnr);
 
             left = left + ",0," + (Math.PI/2);
             right = right + ",0," + (Math.PI/2);

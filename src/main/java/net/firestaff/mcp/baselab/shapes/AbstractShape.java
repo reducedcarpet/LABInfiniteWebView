@@ -39,8 +39,7 @@ public abstract class AbstractShape implements Shape {
     }
 
     public boolean equals(Shape shape) {
-        if(shape.getName().equalsIgnoreCase(this.name)) return true;
-        return false;
+        return shape.getName().equalsIgnoreCase(this.name);
     }
 
     public static Shape getNewShape(Shape old) {
@@ -70,10 +69,8 @@ public abstract class AbstractShape implements Shape {
         pts[0] = (float)myPoint.x;
         pts[1] = (float)myPoint.y;
 
-        // Use the Matrix to map the points
-        // reverse.mapPoints(pts);
 
-        Point newPoint = new Point((int)pts[0], (int)pts[1]);
+        Point newPoint = new Point(pts[0], pts[1]);
         return newPoint;
     }
 

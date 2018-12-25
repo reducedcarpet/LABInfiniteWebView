@@ -8,6 +8,10 @@ public class ChuuChuuSpeed extends AbstractSpeed implements Speed {
 
     double period = Math.PI;
 
+    /////////////////////////////////////////
+    // NOT USED
+    /////////////////////////////////////////
+
     @Override
     public double updateAngle(double angle, double propAngle, double increment, double speed, int direction, double mod) {
         still = (increment * speed * direction) * -1.0;

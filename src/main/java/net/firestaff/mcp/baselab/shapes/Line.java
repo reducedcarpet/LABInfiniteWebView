@@ -34,8 +34,8 @@ public class Line extends AbstractShape implements Shape {
             y = 0;
             x = ((length/2) * circleModifier) * Math.cos((circleAngle));
         }
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

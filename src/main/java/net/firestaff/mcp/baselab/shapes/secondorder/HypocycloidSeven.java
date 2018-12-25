@@ -22,7 +22,7 @@ public class HypocycloidSeven extends AbstractShape implements Shape {
         y = ((a - b) * Math.sin(theta)) + (b * Math.sin(alpha));
 
 
-        p = Rotate.rotate(new Point((int)x,(int)y), (Math.PI / 2));
+        p = Rotate.rotate(new Point(x,y), (Math.PI / 2));
 
 
         return p;

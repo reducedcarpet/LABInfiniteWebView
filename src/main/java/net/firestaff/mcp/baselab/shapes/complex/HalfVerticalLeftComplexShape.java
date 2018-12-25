@@ -36,8 +36,8 @@ public class HalfVerticalLeftComplexShape extends AbstractComplexShape implement
         }
         //else System.out.println("4 " + circleAngle);
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

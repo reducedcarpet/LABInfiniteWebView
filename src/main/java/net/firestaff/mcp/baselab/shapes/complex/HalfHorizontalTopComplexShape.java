@@ -30,8 +30,8 @@ public class HalfHorizontalTopComplexShape extends AbstractComplexShape implemen
             x = p.x;
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

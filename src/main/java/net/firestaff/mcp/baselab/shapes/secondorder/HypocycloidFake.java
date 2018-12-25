@@ -22,7 +22,7 @@ public class HypocycloidFake extends AbstractShape implements Shape {
         x = ((a - b) * Math.cos(theta)) - (b * Math.cos(alpha));
         y = ((a - b) * Math.sin(theta)) + (b * Math.sin(alpha));
 
-        Point pp = new Point((int)x,(int)y);
+        Point pp = new Point(x,(int)y);
 
         // swapping initial sin and cos around makes an epicycloid.
         // swapping both makes for turned hypocycloid.

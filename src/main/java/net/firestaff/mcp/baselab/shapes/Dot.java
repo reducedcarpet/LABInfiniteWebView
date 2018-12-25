@@ -15,8 +15,8 @@ public class Dot  extends AbstractShape implements Shape {
         x = 0;
         y = 0;
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

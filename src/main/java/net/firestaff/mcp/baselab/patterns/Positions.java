@@ -1,9 +1,8 @@
 package net.firestaff.mcp.baselab.patterns;
 
-
 import net.firestaff.mcp.baselab.util.Point;
-
 import java.util.HashMap;
+
 
 public class Positions {
 
@@ -67,7 +66,7 @@ public class Positions {
 
     public static String getName(int x, int y) {
         Point p = new Point(x, y);
-        String result = (String) positionBackMap.get(p);
+        String result = positionBackMap.get(p);
         if(result != null) return result;
         return "center";
     }
@@ -122,7 +121,7 @@ public class Positions {
 
     }
 
-    public static String makeString() {
+    public String toString() {
         String result = "";
         for (String o : positionMap.keySet()) {
             result = result + o + ": x:" + positionMap.get(o).x + " y:" + positionMap.get(o).y + "\n";

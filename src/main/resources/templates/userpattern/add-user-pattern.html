@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User Pattern</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/adduserpattern}" th:object="${userPatternsModel}" method="post">
+    <label for="pattern">Pattern</label>
+    <input type="text" th:field="*{pattern}" id="pattern" placeholder="Pattern">
+    <span th:if="${#fields.hasErrors('pattern')}" th:errors="*{pattern}"></span>
+    <label for="propTypes">Prop Types</label>
+    <input type="text" th:field="*{propTypes}" id="propTypes" placeholder="AKA">
+    <span th:if="${#fields.hasErrors('propTypes')}" th:errors="*{propTypes}"></span>
+    <label for="created">Created</label>
+    <input type="checkbox" th:field="*{created}" id="created" placeholder="false">
+    <span th:if="${#fields.hasErrors('created')}" th:errors="*{created}"></span>
+    <label for="tracked">Tracked</label>
+    <input type="checkbox" th:field="*{tracked}" id="tracked" placeholder="false">
+    <span th:if="${#fields.hasErrors('tracked')}" th:errors="*{tracked}"></span>
+    <input type="submit" value="Add User Pattern">
+</form>
+
+</body>
+</html>

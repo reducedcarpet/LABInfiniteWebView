@@ -12,6 +12,6 @@ public class HypotrochoidSix extends Hypotrochoid{
 
     public Point draw(double length, double circleModifier, double circleAngle, double circleTurnModifier) {
         Point p = drawPetals(length,  circleModifier,  circleAngle,  circleTurnModifier,  6);
-        return Rotate.rotate(new Point((int)p.x,(int)p.y), (Math.PI / 4) * -1);
+        return Rotate.rotate(new Point(p.x,p.y), (Math.PI / 4) * -1);
     }
 }

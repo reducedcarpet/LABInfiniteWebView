@@ -1,7 +1,11 @@
 package net.firestaff.mcp.baselab.patterns;
 
+//import dagger.Module;
+
+//@Module
 public class PatternHelper {
-    
+
+
     static {
 
 

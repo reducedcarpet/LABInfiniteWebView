@@ -28,7 +28,7 @@ public class PlusHalfCAP extends AbstractShape implements Shape {
             else {
                 x = 0;
                 y = ((length / 2) * circleModifier) * Math.sin((circleAngle - (Math.PI / 2)));
-                //p = reverse(new Point((int)x,(int)y)); x = p.x; y = p.y;
+                //p = reverse(new Point(x,y)); x = p.x; y = p.y;
             }
         }
         else if(circleAngle < (Math.PI ))
@@ -40,7 +40,7 @@ public class PlusHalfCAP extends AbstractShape implements Shape {
             else {
                 x = ((length / 2) * circleModifier) * Math.sin((circleAngle - (Math.PI / 2)));
                 y = 0;
-                //p = reverse(new Point((int)x,(int)y)); x = p.x; y = p.y;
+                //p = reverse(new Point(x,y)); x = p.x; y = p.y;
             }
         }
         else if(circleAngle < (Math.PI + (Math.PI / 2)))
@@ -85,7 +85,7 @@ public class PlusHalfCAP extends AbstractShape implements Shape {
             else {
                 x = ((length / 2) * circleModifier) * Math.sin((circleAngle - (Math.PI / 2)));
                 y = 0;
-                //p = reverse(new Point((int)x,(int)y)); x = p.x; y = p.y;
+                //p = reverse(new Point(x,y)); x = p.x; y = p.y;
             }
         }
         else if(circleAngle < (Math.PI * 3) + (Math.PI / 2) )

@@ -83,8 +83,8 @@ public class HCurveFig8  extends AbstractShape implements Shape {
             else
                 y = ((length/2) * circleModifier) * Math.sin((circleAngle  + (Math.PI / 2)));
         }
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

@@ -40,8 +40,8 @@ public class CornerComplexShape extends AbstractComplexShape implements ComplexS
             x = b.x;
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

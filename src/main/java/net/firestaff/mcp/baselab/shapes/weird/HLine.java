@@ -55,8 +55,8 @@ public class HLine extends AbstractShape implements Shape {
             x = ((length/2) * circleModifier) * Math.cos((circleAngle));
         }
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

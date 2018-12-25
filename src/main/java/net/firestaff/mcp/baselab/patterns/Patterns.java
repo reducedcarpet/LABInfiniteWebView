@@ -5,31 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//import javax.inject.Inject;
+
+
 public class Patterns {
-    public static final int MIRROR_ANTI_SPIN_SPLIT_TIME = 0;
-    public static final int MIRROR_ANTI_SPIN_SAME_TIME = 1;
-    public static final int PARALLEL_ANTI_SPIN_SPLIT_TIME = 2;
-    public static final int PARALLEL_ANTI_SPIN_SAME_TIME = 3;
-
-    public static final int MIRROR_HYBRID_SPLIT_TIME = 4;
-    public static final int MIRROR_HYBRID_SAME_TIME = 5;
-    public static final int PARALLEL_HYBRID_SPLIT_TIME = 6;
-    public static final int PARALLEL_HYBRID_SAME_TIME = 7;
-
-    public static final int MIRROR_ISOLATION_SPLIT_TIME = 8;
-    public static final int MIRROR_ISOLATION_SAME_TIME = 9;
-    public static final int PARALLEL_ISOLATION_SPLIT_TIME = 10;
-    public static final int PARALLEL_ISOLATION_SAME_TIME = 11;
-
-    public static final int QUARTER_TIME_MIRROR_ISOLATION = 12;
-    public static final int QUARTER_TIME_PARALLEL_ISOLATION = 13;
-    public static final int QUARTER_TIME_MIRROR_ANTI_SPIN = 14;
-    public static final int QUARTER_TIME_PARALLEL_ANTI_SPIN = 15;
-    public static final int QUARTER_TIME_MIRROR_HYBRID = 16;
-    public static final int QUARTER_TIME_PARALLEL_HYBRID = 17;
-
-    public static final int POSITION_0 = 18;
-    public static final int POSITION_1 = 19;
 
     public static List<Pattern> basicTrammelPatterns = new ArrayList<Pattern>();
     public static List<Pattern> basicIsolationPatterns = new ArrayList<Pattern>();
@@ -93,6 +72,18 @@ public class Patterns {
     public static List<Pattern> GTSwitchbackPlusPatterns = new ArrayList<Pattern>();
     public static List<Pattern> GTThreeBeatKnotPatterns = new ArrayList<Pattern>();
 
+    public static List<Pattern> flip3DFullCirclePatterns = new ArrayList<Pattern>();
+    public static List<Pattern> flip3DHalfCirclePatterns = new ArrayList<Pattern>();
+    public static List<Pattern> flip3DQuarterCirclePatterns = new ArrayList<Pattern>();
+    public static List<Pattern> twist3DFullCirclePatterns = new ArrayList<Pattern>();
+    public static List<Pattern> twist3DHalfCirclePatterns = new ArrayList<Pattern>();
+    public static List<Pattern> twist3DQuarterCirclePatterns = new ArrayList<Pattern>();
+
+    public static List<Pattern> flip3DFullTrammelPatterns = new ArrayList<Pattern>();
+    public static List<Pattern> flip3DHalfTrammelPatterns = new ArrayList<Pattern>();
+    public static List<Pattern> twist3DFullTrammelPatterns = new ArrayList<Pattern>();
+    public static List<Pattern> twist3DHalfTrammelPatterns = new ArrayList<Pattern>();
+
     public static List<Pattern> pingpongPatterns = new ArrayList<Pattern>();
 
     public static Map<String,List<Pattern>> patternMasterMap = new HashMap<String,List<Pattern>>();
@@ -100,6 +91,8 @@ public class Patterns {
     public static List<String> patternList = new ArrayList<String>();
     public static List<String> patternFreeList = new ArrayList<String>();
 
+    //@Inject
+    //PatternHelper pp;
 
     static {
         PatternHelper p = new PatternHelper(); // force patternHelper to init.
@@ -156,6 +149,20 @@ public class Patterns {
         patternMasterMap.put("GT - Switchback Plus", GTSwitchbackPlusPatterns); patternList.add("GT - Switchback Plus");
         patternMasterMap.put("GT - Three Beat Knot", GTThreeBeatKnotPatterns); patternList.add("GT - Three Beat Knot");
         patternMasterMap.put("GT - Half Plus", GTHalfPlusPatterns); patternList.add("GT - Half Plus");
+
+        patternMasterMap.put("3D - Flips - Full Circle", flip3DFullCirclePatterns); patternList.add("3D - Flips - Full Circle");
+        patternMasterMap.put("3D - Flips - Half Circle", flip3DHalfCirclePatterns); patternList.add("3D - Flips - Half Circle");
+        patternMasterMap.put("3D - Flips - 1/4 Circle", flip3DQuarterCirclePatterns); patternList.add("3D - Flips - 1/4 Circle");
+
+        patternMasterMap.put("3D - Twists - Full Circle", twist3DFullCirclePatterns); patternList.add("3D - Twists - Full Circle");
+        patternMasterMap.put("3D - Twists - Half Circle", twist3DHalfCirclePatterns); patternList.add("3D - Twists - Half Circle");
+        patternMasterMap.put("3D - Twists - 1/4 Circle", twist3DQuarterCirclePatterns); patternList.add("3D - Twists - 1/4 Circle");
+
+        patternMasterMap.put("3D Flip - Full - Linear Isolation", flip3DFullTrammelPatterns); patternList.add("3D Flip - Full - Linear Isolation");
+        patternMasterMap.put("3D Flip - Half - Linear Isolation", flip3DHalfTrammelPatterns); patternList.add("3D Flip - Half - Linear Isolation");
+        patternMasterMap.put("3D Twist - Full - Linear Isolation", twist3DFullTrammelPatterns); patternList.add("3D Twist - Full - Linear Isolation");
+        patternMasterMap.put("3D Twist - Half - Linear Isolation", twist3DHalfTrammelPatterns); patternList.add("3D Twist - Half - Linear Isolation");
+
 
         //patternMasterMap.put("", ); patternList.add();
         //patternMasterMap.put("", ); patternList.add();
@@ -278,6 +285,20 @@ public class Patterns {
         PatternGenerator.generateGTHalfPlusPatterns(basic12Patterns, GTHalfPlusPatterns);
 
         PatternGenerator.generatePoiAltPatterns(startingPositions, startingPositionsAll);
+
+        // 3D
+        PatternGenerator.generateFlip3DFullCirclePatterns(basic12Patterns, flip3DFullCirclePatterns);
+        PatternGenerator.generateFlip3DHalfCirclePatterns(basic12Patterns, flip3DHalfCirclePatterns);
+        PatternGenerator.generateFlip3DQuarterCirclePatterns(basic12Patterns, flip3DQuarterCirclePatterns);
+
+        PatternGenerator.generateTwist3DFullCirclePatterns(basic12Patterns, twist3DFullCirclePatterns);
+        PatternGenerator.generateTwist3DHalfCirclePatterns(basic12Patterns, twist3DHalfCirclePatterns);
+        PatternGenerator.generateTwist3DQuarterCirclePatterns(basic12Patterns, twist3DQuarterCirclePatterns);
+
+        PatternGenerator.generateFlip3DFullTrammelPatterns(basicTrammelPatterns, flip3DFullTrammelPatterns);
+        PatternGenerator.generateFlip3DHalfTrammelPatterns(basicTrammelPatterns, flip3DHalfTrammelPatterns);
+        PatternGenerator.generateTwist3DFullTrammelPatterns(basicTrammelPatterns, twist3DFullTrammelPatterns);
+        PatternGenerator.generateTwist3DHalfTrammelPatterns(basicTrammelPatterns, twist3DHalfTrammelPatterns);
     }
 
 }

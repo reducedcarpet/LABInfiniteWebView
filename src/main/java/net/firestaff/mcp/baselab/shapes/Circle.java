@@ -14,8 +14,8 @@ public class Circle extends AbstractShape {
         y = ((length/2) * circleModifier) * Math.sin((circleAngle));
         x = ((length/2) * circleModifier) * Math.cos((circleAngle));
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }
@@ -25,8 +25,8 @@ public class Circle extends AbstractShape {
         double x = ((length/2) * circleModifier) * Math.cos((circleAngle));
 
         Point p = new Point();
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

@@ -8,8 +8,8 @@ public class Rotate {
         x = (p.x * Math.cos(angle)) - (p.y * Math.sin(angle));
         y = (p.x * Math.sin(angle)) + (p.y * Math.cos(angle));
 
-        p.x = (int) x;
-        p.y = (int) y;
+        p.x =  x;
+        p.y =  y;
 
         return p;
     }

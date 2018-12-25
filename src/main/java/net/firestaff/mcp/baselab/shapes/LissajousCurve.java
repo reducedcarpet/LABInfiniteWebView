@@ -28,7 +28,7 @@ public class LissajousCurve extends AbstractShape implements Shape {
         x = (length * circleModifier ) * (a * Math.sin(n  * (circleAngle) + c));
         y = (length * circleModifier ) * (b * Math.sin((circleAngle))) ;
 
-        p = Rotate.rotate(new Point((int)x, (int)y), (Math.PI/2));
+        p = Rotate.rotate(new Point(x, y), (Math.PI/2));
 
         return p;
     }
@@ -38,8 +38,8 @@ public class LissajousCurve extends AbstractShape implements Shape {
         x = (length * circleModifier ) * (a * Math.sin(n  * (circleAngle * -1) + c));
         y = (length * circleModifier ) * (b * Math.sin((circleAngle * -1))) ;
 
-        p.x = (int)x;
-        p.y = (int)y;
+        p.x = x;
+        p.y = y;
 
         return p;
     }

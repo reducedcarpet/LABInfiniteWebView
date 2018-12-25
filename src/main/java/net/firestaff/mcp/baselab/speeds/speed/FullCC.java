@@ -8,7 +8,9 @@ public class FullCC extends AbstractSpeed implements Speed {
 
     public double updateAngle(double angle, double propAngle,  double increment, double speed, int direction, double mod) {
         //mod = mod % (Math.PI * 2);
-        return SpeedHelper.updateSymmetricOnOffAngle(angle, propAngle, increment, speed, direction, (Math.PI * 2), mod);
+        //if(lowerSpeed == 0)
+            return SpeedHelper.updateSymmetricOnOffAngle(angle, propAngle, increment, speed, direction, (Math.PI * 2), mod);
+        //else return SpeedHelper.updateSymmetricPolySpeedAngle(upperSpeed, lowerSpeed, angle, propAngle, increment, speed, direction, (Math.PI * 2), mod);
     }
 
     public Speed copy() {
