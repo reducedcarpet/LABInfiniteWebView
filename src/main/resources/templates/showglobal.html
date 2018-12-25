@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Global Patterns</title>
+</head>
+<body>
+
+<div th:switch="${globalDB}">
+    <h2 th:case="null">No patterns yet!</h2>
+    <div th:case="*">
+        <h2>Patterns:</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Pattern</th>
+                <th>User Created</th>
+                <th>User</th>
+                <th>Prop Types</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="globalDBModel : ${globalDB}">
+                <td th:text="${globalDBModel.id}"></td>
+                <td th:text="${globalDBModel.pattern.patternName}"></td>
+                <td th:text="${globalDBModel.userCreated}"></td>
+                <td th:text="${globalDBModel.userModel}"></td>
+                <td th:text="${globalDBModel.propTypes}"></td>
+                <td><a th:href="@{/pattern/viewpattern/{id}(id=${globalDBModel.pattern.id})}">View</a></td>
+                <td><a th:href="@{/editglobalpattern/{id}(id=${globalDBModel.id})}">Edit</a></td>
+                <td><a th:href="@{/deleteglobalpattern/{id}(id=${globalDBModel.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add">Add a new global pattern</a></p>
+</div>
+
+</body>
+</html>

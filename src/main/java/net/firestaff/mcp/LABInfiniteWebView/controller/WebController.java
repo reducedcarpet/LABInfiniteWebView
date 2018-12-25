@@ -33,7 +33,7 @@ public class WebController implements WebMvcConfigurer {
             return "form";
         }
 
-        @PostMapping("/")
+        @PostMapping("/form")
         public String checkPersonInfo(@Valid PatternQuery query, BindingResult bindingResult) {
 
             if (bindingResult.hasErrors()) {

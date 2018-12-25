@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Pattern</title>
+</head>
+<body>
+
+<div th:switch="${pattern}">
+    <h2 th:case="null">No pattern found</h2>
+    <div th:case="*">
+        <h2>Pattern:</h2>
+        <table  th:each="patternModel : ${pattern}" >
+            <tbody>
+            <tr>
+                <td>Name: </td> <td th:text="${patternModel.patternName}"></td>
+            </tr> <tr>
+                <td>Category: </td> <td th:text="${patternModel.category}"></td>
+            </tr> <tr>
+                <td>Alias: </td> <td th:text="${patternModel.alias}"></td>
+            </tr> <tr>
+                <td>Props: </td> <td th:text="${patternModel.propNumber}"></td>
+            </tr> <tr>
+                <td>Concepts: </td> <td th:text="${patternModel.concepts}"></td>
+            </tr> <tr>
+                <td>1: </td> <td th:text="${patternModel.propOne}"></td>
+            </tr> <tr>
+                <td>2: </td> <td th:text="${patternModel.propTwo}"></td>
+            </tr> <tr>
+                <td>3: </td> <td th:text="${patternModel.propThree}"></td>
+            </tr> <tr>
+                <td>4: </td> <td th:text="${patternModel.propFour}"></td>
+            </tr> <tr>
+                <td><a th:href="@{/pattern/view/{id}(id=${patternModel.id})}">View</a></td>
+            </tr> <tr>
+                <td><a th:href="@{/pattern/edit/{id}(id=${patternModel.id})}">Edit</a></td>
+            </tr> <tr>
+                <td><a th:href="@{/pattern/delete/{id}(id=${patternModel.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/pattern/add">Add a new pattern</a></p>
+</div>
+
+</body>
+</html>

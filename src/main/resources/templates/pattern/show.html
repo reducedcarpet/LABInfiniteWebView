@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Patterns</title>
+</head>
+<body>
+
+<div th:switch="${patternsDB}">
+    <h2 th:case="null">No patterns yet!</h2>
+    <div th:case="*">
+        <h2>Patterns:</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Alias</th>
+                <th>Prop Number</th>
+                <th>Concepts</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="patternModel : ${patternsDB}">
+                <td th:text="${patternModel.id}"></td>
+                <td th:text="${patternModel.patternName}"></td>
+                <td th:text="${patternModel.category}"></td>
+                <td th:text="${patternModel.alias}"></td>
+                <td th:text="${patternModel.propNumber}"></td>
+                <td th:text="${patternModel.concepts}"></td>
+                <td><a th:href="@{/pattern/viewpattern/{id}(id=${patternModel.id})}">View</a></td>
+                <td><a th:href="@{/pattern/edit/{id}(id=${patternModel.id})}">Edit</a></td>
+                <td><a th:href="@{/pattern/delete/{id}(id=${patternModel.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add">Add a new pattern</a></p>
+</div>
+
+</body>
+</html>

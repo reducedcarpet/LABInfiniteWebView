@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Prop Patterns</title>
+</head>
+<body>
+
+<div th:switch="${propPatternsDB}">
+    <h2 th:case="null">No prop patterns yet!</h2>
+    <div th:case="*">
+        <h2>Prop Patterns:</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Shape</th>
+                <th>Complex</th>
+                <th>Prop Dir</th>
+                <th>Path Dir</th>
+                <th>Prop Speed</th>
+                <th>Path Speed</th>
+                <th>Prop Mod</th>
+                <th>Path Mod</th>
+                <th>Rotation</th>
+                <th>Path Size</th>
+                <th>X</th>
+                <th>Y</th>
+
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="propPatternModel : ${propPatternsDB}">
+                <td th:text="${propPatternModel.shape}"></td>
+                <td th:text="${propPatternModel.complexShape}"></td>
+                <td th:text="${propPatternModel.propDirection}"></td>
+                <td th:text="${propPatternModel.pathDirection}"></td>
+                <td th:text="${propPatternModel.propSpeed}"></td>
+                <td th:text="${propPatternModel.pathSpeed}"></td>
+                <td th:text="${propPatternModel.propAngleModifier}"></td>
+                <td th:text="${propPatternModel.pathAngleModifier}"></td>
+                <td th:text="${propPatternModel.pathRotation}"></td>
+                <td th:text="${propPatternModel.pathSizeModifier}"></td>
+                <td th:text="${propPatternModel.xAdj}"></td>
+                <td th:text="${propPatternModel.yAdj}"></td>
+
+                <td><a th:href="@{/proppattern/view/{id}(id=${propPatternModel.textPattern})}">View</a></td>
+                <td><a th:href="@{/proppattern/edit/{id}(id=${propPatternModel.textPattern})}">Edit</a></td>
+                <td><a th:href="@{/proppattern/delete/{id}(id=${propPatternModel.textPattern})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add">Add a new pattern</a></p>
+</div>
+
+</body>
+</html>
