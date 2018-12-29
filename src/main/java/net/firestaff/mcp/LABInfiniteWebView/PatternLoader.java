@@ -70,6 +70,7 @@ public class PatternLoader implements ApplicationRunner {
             }
         }
 
+        /*
         for(String category : PoiPatterns.patternMasterMap.keySet()) {
             List<Pattern> patterns = PoiPatterns.patternMasterMap.get(category);
 
@@ -100,7 +101,7 @@ public class PatternLoader implements ApplicationRunner {
                 globalDBRepository.save(globalModel);
             }
         }
-
+        /**/
 
         /*
 
