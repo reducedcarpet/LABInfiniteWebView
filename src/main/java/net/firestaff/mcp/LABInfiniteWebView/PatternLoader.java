@@ -5,10 +5,7 @@ import net.firestaff.mcp.LABInfiniteWebView.dao.PatternModelRepository;
 import net.firestaff.mcp.LABInfiniteWebView.dao.PatternRepository;
 import net.firestaff.mcp.LABInfiniteWebView.dao.PropPatternModelRepository;
 import net.firestaff.mcp.LABInfiniteWebView.model.*;
-import net.firestaff.mcp.baselab.patterns.Pattern;
-import net.firestaff.mcp.baselab.patterns.Patterns;
-import net.firestaff.mcp.baselab.patterns.PatternsVTG;
-import net.firestaff.mcp.baselab.patterns.PoiPatternsVTG;
+import net.firestaff.mcp.baselab.patterns.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -65,12 +62,46 @@ public class PatternLoader implements ApplicationRunner {
 
                 GlobalDBModel globalModel = new GlobalDBModel();
                 globalModel.setPattern(patternModel);
-                globalModel.setPropTypes("Poi");
+                globalModel.setPropTypes("ALL");
+                globalModel.setFramework("VTG");
                 globalModel.setUserCreated(false);
 
                 globalDBRepository.save(globalModel);
             }
         }
+
+        for(String category : PoiPatterns.patternMasterMap.keySet()) {
+            List<Pattern> patterns = PoiPatterns.patternMasterMap.get(category);
+
+            for(Pattern pattern : patterns) {
+                //view.setRightPattern(new PatternView(pattern.getRightText()));
+                //view.setLeftPattern(new PatternView(pattern.getLeftText()));
+                PropPatternModel modelLeft = new PropPatternModel();
+                PropPatternModel modelRight = new PropPatternModel();
+                modelLeft.setTextPattern(pattern.getLeftText());
+                propPatternModelRepository.save(modelLeft);
+                modelRight.setTextPattern(pattern.getRightText());
+                propPatternModelRepository.save(modelRight);
+
+                PatternModel patternModel = new PatternModel();
+                patternModel.setPatternName(pattern.getName());
+                patternModel.setPropOne(modelRight);
+                patternModel.setPropTwo(modelLeft);
+                patternModel.setPropNumber(2);
+                patternModel.setCategory(category);
+                patternModelRepository.save(patternModel);
+
+                GlobalDBModel globalModel = new GlobalDBModel();
+                globalModel.setPattern(patternModel);
+                globalModel.setPropTypes("ALL");
+                globalModel.setFramework("OGF");
+                globalModel.setUserCreated(false);
+
+                globalDBRepository.save(globalModel);
+            }
+        }
+
+
         /*
 
         for(String category : PatternsVTG.patternMasterMap.keySet()) {

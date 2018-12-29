@@ -22,9 +22,11 @@ public class GlobalController {
         this.globalDBRepository = globalDBRepository;
     }
 
-    @GetMapping("/showglobal")
+    @GetMapping("/show")
     public String showGlobal(Model model) {
-        model.addAttribute("globalDB", globalDBRepository.findAll());
-        return "showglobal";
+        model.addAttribute("globalDB", globalDBRepository.findAllByFramework("OGF"));
+        return "show";
     }
+
+
 }

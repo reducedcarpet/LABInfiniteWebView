@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Patterns</title>
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+</head>
+<body>
+
+<form action="#" th:action="@{/pattern/show}" th:object="${command}" method="post">
+    <select th:field="*{dropdownSelectedValue}">
+        <option
+                th:each="dropdownValue: ${singleSelectAllValues}"
+                th:value="${dropdownValue}"
+                th:text="${dropdownValue}" ></option>
+    </select>
+    <button type="submit" >submit</button>
+</form>
+<!--
+<form th:action="@{/pattern/show/(category)}" th:object="${category}" method="post">
+<select th:field="${categoryDB}"  id="category" >
+    <option value="0">select category</option>
+    <option th:each="category : ${categoryDB}" th:value="${category}" th:text="${category}"></option>
+</select>
+    <button type="submit" >submit</button>
+</form> -->
+
+<div th:switch="${categoryDB}">
+    <h2 th:case="null">No categories yet!</h2>
+    <div th:case="*">
+        <h2>Categories:</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cn : ${categoryDB}">
+                <td th:text="${cn}"></td>
+                <td><a th:href="@{/pattern/show/{id}(id=${cn})}">View All</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

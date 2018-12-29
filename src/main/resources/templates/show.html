@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Index Global Patterns</title>
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 </head>
 <body>
 
@@ -16,9 +18,11 @@
             <tr>
                 <th>ID</th>
                 <th>Pattern</th>
+                <th>Category</th>
                 <th>User Created</th>
                 <th>User</th>
                 <th>Prop Types</th>
+                <th>Framework</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -26,11 +30,13 @@
             <tbody>
             <tr th:each="globalDBModel : ${globalDB}">
                 <td th:text="${globalDBModel.id}"></td>
-                <td th:text="${globalDBModel.pattern.patternName}"></td>
+                <td><a th:href="@{/pattern/view/{id}(id=${globalDBModel.pattern.id})}" th:text="${globalDBModel.pattern.patternName}"></a></td>
+                <td><a th:href="@{/pattern/show/{id}(id=${globalDBModel.pattern.category})}" th:text="${globalDBModel.pattern.category}"></a></td>
                 <td th:text="${globalDBModel.userCreated}"></td>
                 <td th:text="${globalDBModel.userModel}"></td>
                 <td th:text="${globalDBModel.propTypes}"></td>
-                <td><a th:href="@{/pattern/viewpattern/{id}(id=${globalDBModel.pattern.id})}">View</a></td>
+                <td th:text="${globalDBModel.framework}"></td>
+                <td><a th:href="@{/pattern/view/{id}(id=${globalDBModel.pattern.id})}">View</a></td>
                 <td><a th:href="@{/editglobalpattern/{id}(id=${globalDBModel.id})}">Edit</a></td>
                 <td><a th:href="@{/deleteglobalpattern/{id}(id=${globalDBModel.id})}">Delete</a></td>
             </tr>

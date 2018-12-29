@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Pattern</title>
+</head>
+<body>
+
+<div th:switch="${textpattern}">
+    <h2 th:case="null">No pattern found</h2>
+    <div th:case="*">
+        <h2>Pattern:</h2>
+        <p th:text="${textpattern}"></p>
+    </div>
+    <p><a th:href="@{http://tutorials.firestaff.net/Build/} + ${textpattern}">Add a new pattern</a></p>
+</div>
+
+</body>
+</html>

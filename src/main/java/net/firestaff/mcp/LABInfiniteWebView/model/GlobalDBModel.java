@@ -16,8 +16,10 @@ public class GlobalDBModel implements Serializable {
     private @Id @GeneratedValue Long id;
 
     private PatternModel pattern;
+
     private boolean userCreated;
     private UserModel userModel;
+    private String framework;
     private String propTypes;
 }
 

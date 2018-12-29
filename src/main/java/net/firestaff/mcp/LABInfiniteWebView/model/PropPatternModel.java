@@ -43,14 +43,14 @@ public class PropPatternModel implements Serializable {
     private boolean useGravity = false;
     private boolean usePendulums = false;
 
-    private boolean use3D;
-    private String zShape;
-    private double mod3D;
-    private boolean flip3D;
-    private boolean twist3D;
+    public boolean use3D = false;
+    private String zShape = "";
+    private double mod3D = 0;
+    public boolean flip3D = false;
+    public boolean twist3D = false;
 
-    private double upperSpeed;
-    private double lowerSpeed;
+    private double upperSpeed = 1;
+    private double lowerSpeed = 0;
 
     public void setTextPattern(String textPattern) {
         parsePropText(textPattern);
